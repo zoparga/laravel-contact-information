@@ -1,0 +1,61 @@
+{
+    "name": "zoparga/laravel-contact-information",
+    "description": "Add many address to many model with a single trait. E.g.: many shipping address for a customer.",
+    "keywords": [
+        "zoparga",
+        "laravel",
+        "laravel-contact-information"
+    ],
+    "homepage": "https://github.com/zoparga/laravel-contact-information",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Papp Zoltán",
+            "email": "zoltan@pappz.hu",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^8.37"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^5.3",
+        "orchestra/testbench": "^6.15",
+        "pestphp/pest": "^1.18",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "spatie/laravel-ray": "^1.23",
+        "vimeo/psalm": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "zoparga\\ContactInformation\\": "src",
+            "zoparga\\ContactInformation\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "zoparga\\ContactInformation\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "zoparga\\ContactInformation\\ContactInformationServiceProvider"
+            ],
+            "aliases": {
+                "ContactInformation": "zoparga\\ContactInformation\\ContactInformationFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
